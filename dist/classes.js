@@ -10,7 +10,7 @@ var Task = function Task() {
     console.log('Создание задачи');
 };
 
-var task = new task();
+var task = new Task();
 
 console.log(typeof task === 'undefined' ? 'undefined' : _typeof(task));
 console.log(task instanceof Task);
