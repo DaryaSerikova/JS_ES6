@@ -1,16 +1,32 @@
-let [js, php, py, rb] = ['JavaScipt', 'PHP', 'Python', 'Ruby'];
-console.log(js, php, py, rb);
+//Деструктивное присваивание объектов
+let person = {
+    firstname: 'John',
+    lastname: 'Doe'
+};
+
+// let {firstname: first, lastname: last, age = 25} = {firstname: 'John', lastname: 'Doe'};
+let {['first'+'name']: first, lastname: last, age = 25} = {firstname: 'John', lastname: 'Doe'};
+// let {firstname: first, lastname: last} = person;
+
+console.log(first, last, age);
+
+// let {firstname, lastname} = person;
+// console.log(firstname, lastname);
+
+//Деструктивное присваивание массивов
+
+// let [js, php, py, rb] = ['JavaScipt', 'PHP', 'Python', 'Ruby'];
+// console.log(js, php, py, rb);
 
 
 
-let yes = 'Yes';
-let no = 'No';
+// let yes = 'Yes';
+// let no = 'No';
 
-[yes, no] = [no, yes];
-console.log(`Yes is ${yes}`);
-console.log(`No is ${no}`);
-console.log('O_o');
-
+// [yes, no] = [no, yes];
+// console.log(`Yes is ${yes}`);
+// console.log(`No is ${no}`);
+// console.log('O_o');
 
 
 
