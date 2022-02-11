@@ -12,19 +12,27 @@ var Task = function () {
 
         this.title = title;
         this._done = false;
-        // Task.count += 1;
+        Task.count += 1;
         console.log('Создание задачи');
     }
-
-    // get done() {
-    //     return this._done === true ? 'Задача выполнена' : 'Задача не выполнена';
-    // }
 
     _createClass(Task, [{
         key: 'complete',
         value: function complete() {
             this.done = true;
             console.log('\u0417\u0430\u0434\u0430\u0447\u0430 "' + this.title + '" \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0430');
+        }
+    }, {
+        key: 'done',
+        get: function get() {
+            return this._done === true ? 'Задача выполнена' : 'Задача не выполнена';
+        },
+        set: function set(value) {
+            if (value !== undefined && typeof value === 'boolean') {
+                this._done = value;
+            } else {
+                console.error('Ошибка! Укажите значение true или false');
+            }
         }
     }], [{
         key: 'getDefaultTitle',
@@ -36,22 +44,21 @@ var Task = function () {
     return Task;
 }();
 
-// Task.count = 0;
+Task.count = 0;
 
 var task = new Task('Убрать комнату');
 
 console.log(task.done, task._done);
-// task.complete();
-// console.log(task.done, task._done);
+task.complete();
+console.log(task.done, task._done);
 
+// let task2 = new Task('Купить продукты');
+// let task3 = new Task();
 
-var task2 = new Task('Купить продукты');
-var task3 = new Task();
-
-console.log(task.title);
-console.log(task2.title);
-console.log(task3.title);
+// console.log(task.title);
+// console.log(task2.title);
+// console.log(task3.title);
 
 // console.log(Task.count);
 
-task2.complete();
+// task2.complete();
